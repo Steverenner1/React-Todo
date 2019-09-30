@@ -12,17 +12,17 @@ class App extends React.Component {
     this.state = {
       todos: [
         {
-          task: <p>Mow The Lawn</p>,
+          task: <h2>Mow The Lawn</h2>,
           id: 1,
           completed: false
         },
         {
-          task: <p>Clean The House</p>,
+          task: <h2>Clean The House</h2>,
           id: 2,
           completed: false
         },
         {
-          task: <p>Do The Dishes</p>,
+          task: <h2>Do The Dishes</h2>,
           id: 3,
           completed: false
         }
@@ -64,18 +64,20 @@ class App extends React.Component {
   
   render() {
     return (
-      <div>
+      <div className ="todo-list">
+        
         <TodoList
           handleToggleComplete={this.toggleTodoComplete}
           todos={this.state.todos}
         />
-
+        <div className ="todo-form">
         <TodoForm 
           value={this.state.todo}
           handleTodoChange={this.changeTodo}
           handleAddTodo={this.addTodo}
           handleClearTodos={this.clearCompletedTodos}
         />
+        </div>
       </div>
     );
   }
